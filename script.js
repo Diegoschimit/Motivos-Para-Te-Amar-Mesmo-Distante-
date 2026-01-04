@@ -63,7 +63,6 @@ const frases = [
   "Te amo porque você é meu lar.",
   "Te amo porque você me faz sentir completo.",
   "Te amo porque você me dá motivos para sorrir.",
-  "Te amo porque você é meu amor.",
   "Te amo porque você é única.",
   "Te amo porque você é especial.",
   "Te amo porque você é incrível.",
@@ -82,12 +81,10 @@ const frases = [
   "Te amo porque você faz parte de mim.",
   "Te amo porque nosso amor é leve.",
   "Te amo porque nosso amor é forte.",
-  "Te amo porque nosso amor é verdadeiro.",
   "Te amo porque nosso amor é sincero.",
   "Te amo porque nosso amor é único.",
   "Te amo porque nosso amor é infinito.",
   "Te amo porque você faz meu coração bater mais forte.",
-  "Te amo porque você faz tudo valer a pena.",
   "Te amo porque você é o melhor que me aconteceu.",
   "Te amo porque amar você é fácil.",
   "Te amo porque amar você é natural.",
@@ -97,18 +94,13 @@ const frases = [
   "Te amo porque amar você me fortalece.",
   "Te amo porque amar você me traz paz.",
   "Te amo porque amar você é meu lar.",
-  "Te amo porque amar você é minha escolha diária.   
-  "Te amo porque você faz meu coração se sentir em paz.",
-  "Te amo porque pensar em você já melhora meu dia.",
+  "Te amo porque amar você é minha escolha diária.",
   "Te amo porque você me faz sentir protegido.",
   "Te amo porque você sabe me acalmar.",
   "Te amo porque você transforma preocupação em tranquilidade.",
   "Te amo porque você é meu refúgio.",
-  "Te amo porque seu carinho é sincero.",
   "Te amo porque você me acolhe.",
   "Te amo porque você me entende sem palavras.",
-  "Te amo porque você me faz sentir seguro.",
-  "Te amo porque você cuida de mim com amor.",
   "Te amo porque você me apoia sempre.",
   "Te amo porque você me faz acreditar mais no amor.",
   "Te amo porque você é meu descanso.",
@@ -116,7 +108,6 @@ const frases = [
   "Te amo porque você é meu pensamento bom.",
   "Te amo porque você melhora meus dias difíceis.",
   "Te amo porque você não solta minha mão.",
-  "Te amo porque você me fortalece.",
   "Te amo porque você me traz calma.",
   "Te amo porque você me traz alegria.",
   "Te amo porque você me traz esperança.",
@@ -125,74 +116,33 @@ const frases = [
   "Te amo porque você me faz sentir amado de verdade.",
   "Te amo porque você faz tudo parecer possível.",
   "Te amo porque você acredita na gente.",
-  "Te amo porque você faz o amor parecer simples.",
   "Te amo porque você é meu conforto diário.",
-  "Te amo porque você me faz sentir completo.",
   "Te amo porque você é meu pensamento constante.",
-  "Te amo porque você faz meu coração sorrir.",
   "Te amo porque você faz meus dias melhores.",
   "Te amo porque você é meu abrigo.",
   "Te amo porque você é meu bem mais precioso.",
   "Te amo porque você é minha calmaria.",
-  "Te amo porque você é minha certeza.",
   "Te amo porque você é minha alegria diária.",
   "Te amo porque você é minha felicidade simples.",
   "Te amo porque você é meu carinho preferido.",
   "Te amo porque você é meu pensamento mais bonito.",
   "Te amo porque você faz meu coração se aquietar.",
-  "Te amo porque você faz tudo valer a pena.",
   "Te amo porque você é minha base.",
   "Te amo porque você é meu apoio.",
   "Te amo porque você é meu equilíbrio.",
   "Te amo porque você é minha tranquilidade.",
-  "Te amo porque você é meu melhor sentimento.",
   "Te amo porque você é minha pessoa favorita.",
   "Te amo porque você é meu lugar seguro.",
   "Te amo porque você é minha paz diária.",
-  "Te amo porque você é meu conforto emocional.",
   "Te amo porque você é meu amor constante.",
-  "Te amo porque você faz meu coração descansar.",
-  "Te amo porque você é meu melhor pensamento.",
-  "Te amo porque você é meu sorriso interno.",
-  "Te amo porque você é minha alegria silenciosa.",
-  "Te amo porque você é meu afeto.",
-  "Te amo porque você é meu cuidado.",
-  "Te amo porque você é meu carinho.",
-  "Te amo porque você é meu abraço favorito.",
-  "Te amo porque você é meu bem.",
-  "Te amo porque você é meu amor tranquilo.",
-  "Te amo porque você é meu amor seguro.",
   "Te amo porque você é meu amor verdadeiro.",
-  "Te amo porque você é meu amor constante.",
-  "Te amo porque você é meu amor diário.",
-  "Te amo porque você é meu amor simples.",
-  "Te amo porque você é meu amor inteiro.",
-  "Te amo porque você é meu amor sincero.",
-  "Te amo porque você é meu amor leve.",
-  "Te amo porque você é meu amor forte.",
-  "Te amo porque você é meu amor calmo.",
-  "Te amo porque você é meu amor bonito.",
-  "Te amo porque você é meu amor raro.",
-  "Te amo porque você é meu amor real.",
-  "Te amo porque você é meu amor único.",
-  "Te amo porque você é meu amor especial.",
-  "Te amo porque você é meu amor preferido.",
-  "Te amo porque você é meu amor de verdade.",
   "Te amo porque você é meu amor para sempre.",
-  "Te amo porque você é meu amor todos os dias.",
-  "Te amo porque você é meu amor em qualquer distância.",
-  "Te amo porque você é meu amor em qualquer fase.",
-  "Te amo porque você é meu amor em qualquer lugar.",
-  "Te amo porque você é meu amor em qualquer tempo.",
-  "Te amo porque você é meu amor em qualquer momento.",
-  "Te amo porque você é meu amor em qualquer situação.",
-  "Te amo porque você é meu amor hoje e sempre."'
-  ];
+  "Te amo porque você é meu amor hoje e sempre."
+];
 
-const total = frases.length;
 const hoje = new Date().toDateString();
 
-let estado = JSON.parse(localStorage.getItem("estadoMotivo")) || {
+let estado = JSON.parse(localStorage.getItem("estadoMotivos")) || {
   usadas: [],
   ultimaData: null,
   fraseAtual: null
@@ -200,26 +150,19 @@ let estado = JSON.parse(localStorage.getItem("estadoMotivo")) || {
 
 if (estado.ultimaData !== hoje) {
   const disponiveis = frases
-    .map((f, i) => i)
+    .map((_, i) => i)
     .filter(i => !estado.usadas.includes(i));
 
-  if (disponiveis.length > 0) {
-    const sorteada = disponiveis[Math.floor(Math.random() * disponiveis.length)];
-    estado.fraseAtual = sorteada;
-    estado.usadas.push(sorteada);
-    estado.ultimaData = hoje;
-    localStorage.setItem("estadoMotivos", JSON.stringify(estado));
+  if (disponiveis.length === 0) {
+    estado.usadas = [];
   }
-}
 
-const numeroAtual = estado.usadas.length;
-
-if (estado.fraseAtual === null || frases[estado.fraseAtual] === undefined) {
-  estado.fraseAtual = Math.floor(Math.random() * frases.length);
-  estado.usadas = [];
+  const sorteada = disponiveis[Math.floor(Math.random() * disponiveis.length)];
+  estado.fraseAtual = sorteada;
+  estado.usadas.push(sorteada);
   estado.ultimaData = hoje;
+
   localStorage.setItem("estadoMotivos", JSON.stringify(estado));
 }
 
-document.getElementById("frase").innerText =
-  frases[estado.fraseAtual];
+document.getElementById("frase").innerText = frases[estado.fraseAtual];
