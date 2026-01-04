@@ -190,7 +190,7 @@ const frases = [,"Te amo porque você transforma dias comuns em dias especiais."
 const total = frases.length;
 const hoje = new Date().toDateString();
 
-let estado = JSON.parse(localStorage.getItem("estadoMotivos")) || {
+let estado = JSON.parse(localStorage.getItem("estadoMotivos_v2")) || {
   usadas: [],
   ultimaData: null,
   fraseAtual: null
