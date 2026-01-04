@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(135deg, #f8cdda, #fbd3e9);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1 { color: #d6336c; }
+.frase { font-size: 18px; margin: 20px 0; color: #333; }
+.contador { font-size: 14px; color: #777; }
+.assinatura { font-size: 14px; color: #999; margin-top: 20px; }
