@@ -1,5 +1,6 @@
 
-const frases = [,"Te amo porque você transforma dias comuns em dias especiais.",
+const frases = [
+  "Te amo porque você transforma dias comuns em dias especiais.",
   "Te amo porque seu sorriso muda completamente o meu humor.",
   "Te amo porque seu abraço é meu lugar seguro.",
   "Te amo porque você me entende até quando eu não sei explicar.",
@@ -185,7 +186,8 @@ const frases = [,"Te amo porque você transforma dias comuns em dias especiais."
   "Te amo porque você é meu amor em qualquer tempo.",
   "Te amo porque você é meu amor em qualquer momento.",
   "Te amo porque você é meu amor em qualquer situação.",
-  "Te amo porque você é meu amor hoje e sempre."'];
+  "Te amo porque você é meu amor hoje e sempre."'
+  ];
 
 const total = frases.length;
 const hoje = new Date().toDateString();
