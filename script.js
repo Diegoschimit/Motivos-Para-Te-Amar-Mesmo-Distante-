@@ -212,8 +212,12 @@ if (estado.ultimaData !== hoje) {
 
 const numeroAtual = estado.usadas.length;
 
-document.getElementById("contador").innerText =
-  `Motivo ${numeroAtual} de ${total}`;
+if (estado.fraseAtual === null || frases[estado.fraseAtual] === undefined) {
+  estado.fraseAtual = Math.floor(Math.random() * frases.length);
+  estado.usadas = [];
+  estado.ultimaData = hoje;
+  localStorage.setItem("estadoMotivos", JSON.stringify(estado));
+}
 
 document.getElementById("frase").innerText =
   frases[estado.fraseAtual];
